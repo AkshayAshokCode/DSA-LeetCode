@@ -5,9 +5,8 @@ class Solution {
         for(i in 0 until nums.size){
             if(nums[i]==1){
                 counter++
-                if(max < counter){
-                    max = counter
-                }
+                max = max(max, counter)
+               
             }else{
                 counter = 0
             }

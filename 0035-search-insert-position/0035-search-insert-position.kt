@@ -1,20 +1,20 @@
 class Solution {
     fun searchInsert(nums: IntArray, target: Int): Int {
-          var left = 0
-    var right = nums.size - 1
-    
-    while (left <= right) {
-        val mid = left + (right - left) / 2
-        
+    var low = 0
+    var high = nums.size -1
+
+     while (low <= high) {
+        var mid = low + (high - low) / 2
         if (nums[mid] == target) {
             return mid
-        } else if (nums[mid] < target) {
-            left = mid + 1
-        } else {
-            right = mid - 1
         }
-    }
-    
-    return left
+        if(nums[mid] > target) {
+            high = mid -1
+        } else {
+            low = mid + 1
+        }
+     }
+
+     return low
     }
 }
